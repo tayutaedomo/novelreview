@@ -13,8 +13,9 @@ const puppeteer = require('puppeteer');
 
   const page = await browser.newPage();
 
-  novelReviews = new NovelReviews();
-  await novelReviews.scrape(page);
+  const novelReviews = new NovelReviews();
+  const reviews = await novelReviews.scrape(page);
+  console.log(JSON.stringify(reviews, null, 2));
 
   await browser.close();
 
