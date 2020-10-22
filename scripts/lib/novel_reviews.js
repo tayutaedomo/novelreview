@@ -25,6 +25,10 @@ class NovelReviews {
 
     return this.reviews;
   }
+
+  async detect() {
+    return this.reviews.filter(payload => payload.novel.detect());
+  }
 }
 
 
@@ -146,6 +150,25 @@ class Novel {
       }
     } catch(e) {
       console.error(e);
+    }
+  }
+
+  detect() {
+    if (! this.charCount) return false;
+
+    // Character count check
+    if (this.getCharCountInt() < 100000) return false;
+
+    return true;
+  }
+
+  getCharCountInt() {
+    if (! this.charCount) return 0;
+
+    try {
+      return parseInt(this.charCount.replace(/[\D]/g, ''));
+    } catch {
+      return 0;
     }
   }
 }
