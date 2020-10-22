@@ -10,13 +10,17 @@ class NovelReviews {
     const itemHandles = await page.$$('.widget-reviewsItem');
 
     for await (const itemHandle of itemHandles) {
-      const review = new NovelReview();
-      await review.parseReviewsItem(itemHandle);
+      try {
+        const review = new NovelReview();
+        await review.parseReviewsItem(itemHandle);
 
-      const novel = new Novel();
-      await novel.parseReviewsItem(itemHandle);
+        const novel = new Novel();
+        await novel.parseReviewsItem(itemHandle);
 
-      this.reviews.push({ review, novel });
+        this.reviews.push({ review, novel });
+      } catch(e) {
+        console.error(e);
+      }
     }
 
     return this.reviews;
@@ -56,7 +60,7 @@ class NovelReview {
         this.reviewerUrl = await authorHandle.evaluate(node => node.getAttribute('href'));
       }
     } catch(e) {
-      console.log(e);
+      console.error(e);
     }
   }
 }
@@ -141,7 +145,7 @@ class Novel {
         });
       }
     } catch(e) {
-      console.log(e);
+      console.error(e);
     }
   }
 }
