@@ -97,6 +97,11 @@ class Novel {
     };
   }
 
+  getUrl() {
+    if (! this.url) return '';
+    return 'https://kakuyomu.jp' + this.url;
+  }
+
   async parseReviewsItem(itemHandle) {
     try {
       const titleHandle = await itemHandle.$('.widget-workCard-title a');

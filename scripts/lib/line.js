@@ -15,7 +15,6 @@ const postMessage = async (toUserId, text, notificationDisabled) => {
     text: text
   };
 
-  console.log(LINE_CHANNEL_ACCESS_TOKEN, toUserId, text, notificationDisabled);
   return client.pushMessage(toUserId, message, notificationDisabled);
 }
 
