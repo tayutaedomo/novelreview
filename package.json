@@ -12,6 +12,7 @@
   "author": "Tayutaedomo <tayutaedomo@gmail.com>",
   "homepage": "https://github.com/tayutaedomo/novelreview#readme",
   "dependencies": {
+    "@line/bot-sdk": "^7.1.0",
     "moment": "^2.29.1",
     "puppeteer": "^5.3.1"
   }
