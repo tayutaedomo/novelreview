@@ -12,7 +12,7 @@ $ export LINE_POST_USER_ID=<Receiver user id>
 ## Cloud Functions
 ### Deploy
 ```
-$ gcloud functions deploy scraping --runtime nodejs10 --trigger-http --allow-unauthenticated
+$ gcloud functions deploy <Your function name> --runtime nodejs10 --trigger-http --allow-unauthenticated
 ```
 
 ## Local Development
