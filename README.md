@@ -14,3 +14,8 @@ $ export LINE_POST_USER_ID=<Receiver user id>
 ```
 $ gcloud functions deploy scraping --runtime nodejs10 --trigger-http --allow-unauthenticated
 ```
+
+## Local Development
+```
+$ npm start
+```
