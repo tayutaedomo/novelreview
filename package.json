@@ -16,6 +16,7 @@
   "dependencies": {
     "@google-cloud/datastore": "^5.1.0",
     "@line/bot-sdk": "^7.1.0",
+    "gstore-node": "^7.2.5",
     "moment": "^2.29.1",
     "puppeteer": "^5.3.1"
   },
