@@ -105,3 +105,4 @@ dist
 
 
 data
+etc/google-cloud/*.json
