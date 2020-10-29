@@ -1,18 +1,20 @@
-const {Datastore} = require('@google-cloud/datastore');
+const { Datastore } = require('@google-cloud/datastore');
 
 const datastore = new Datastore({
   keyFilename: process.env['DATASTORE_CREDENTIALS']
 });
 
-const { Gstore } = require('gstore-node');
+const { Gstore, instances } = require('gstore-node');
 const gstore = new Gstore({
   cache: false,
   errorOnEntityNotFound: false,
 });
 
+instances.set('default', gstore);
 gstore.connect(datastore);
 
 
+const { NovelReviewModel } = require('../../lib/db');
 const NovelReviews = require('../../lib/novel_reviews');
 
 
@@ -27,6 +29,8 @@ const NovelReviews = require('../../lib/novel_reviews');
     const novelReviews = new NovelReviews();
     await novelReviews.restore(json_path);
     //console.log(JSON.stringify(novelReviews, null, 2))
+
+    //console.log(await NovelReviewModel.list());
 
   } catch(err) {
     console.error(err);
