@@ -30,7 +30,7 @@ const { NovelReviews } = require('../../lib/novel_reviews');
     await novelReviews.restore(json_path);
     //console.log(JSON.stringify(novelReviews, null, 2))
 
-    //console.log(await NovelReviewModel.list());
+    await novelReviews.saveModels();
 
   } catch(err) {
     console.error(err);
