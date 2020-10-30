@@ -15,7 +15,7 @@ gstore.connect(datastore);
 
 
 const { NovelReviewModel } = require('../../lib/db');
-const NovelReviews = require('../../lib/novel_reviews');
+const { NovelReviews } = require('../../lib/novel_reviews');
 
 
 (async () => {

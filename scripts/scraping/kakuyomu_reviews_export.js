@@ -1,7 +1,6 @@
 const puppeteer = require('puppeteer');
 
-const NovelReviews = require('../../lib/novel_reviews');
-const NovelWriter = require('../../lib/novel_writer');
+const { NovelReviews, NovelWriter } = require('../../lib/novel_reviews');
 
 
 (async () => {
