@@ -343,7 +343,7 @@ class Novel {
 
 class NovelWriter {
   constructor() {
-    this.distDirPath = path.join(__dirname, '..', 'data');
+    this.distDirPath = path.join(__dirname, '..', '..', 'data');
   }
 
   async writeJsonAll(reviews) {

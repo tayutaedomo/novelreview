@@ -1,7 +1,7 @@
 const puppeteer = require('puppeteer');
 
-const { NovelReviews } = require('../../lib/novel_reviews');
-const LINE = require('../../lib/line');
+const { NovelReviews } = require('../lib/novel_reviews');
+const LINE = require('../lib/line');
 
 const LINE_POST_USER_ID = process.env['LINE_POST_USER_ID'];
 

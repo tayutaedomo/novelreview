@@ -14,7 +14,7 @@ instances.set('default', gstore);
 gstore.connect(datastore);
 
 
-const { NovelReviews } = require('../../lib/novel_reviews');
+const { NovelReviews } = require('../lib/novel_reviews');
 
 
 (async () => {
