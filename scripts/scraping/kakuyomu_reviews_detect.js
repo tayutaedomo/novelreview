@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 
-const NovelReviews = require('../../lib/novel_reviews');
+const { NovelReviews } = require('../../lib/novel_reviews');
 const LINE = require('../../lib/line');
 
 const LINE_POST_USER_ID = process.env['LINE_POST_USER_ID'];
@@ -24,20 +24,22 @@ const LINE_POST_USER_ID = process.env['LINE_POST_USER_ID'];
   await browser.close();
 
   const message = createLineMessage(detected);
+  console.log(message);
 
   if (LINE_POST_USER_ID && message.length > 0) {
     await LINE.postMessage(LINE_POST_USER_ID, message, true);
     console.log('Sent message.');
   }
+
 })();
 
 
 const createLineMessage = (reviews) => {
-  const messages = reviews.map(payload => {
+  const messages = reviews.map(review => {
     return [
-      payload.novel.title,
-      payload.novel.genre + ' / ' +  payload.novel.points + ' / ' + payload.novel.charCount,
-      payload.novel.getUrl(),
+      review.novel.title,
+      review.novel.genre + ' / ' +  review.novel.points + ' / ' + review.novel.charCount,
+      review.novel.getUrl(),
     ].join('\n');
   });
 

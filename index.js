@@ -13,7 +13,8 @@ exports.scraping = (req, res) => {
       const novel = payload.novel;
       return [
         novel.title,
-        novel.genre + ' / ' +  novel.points + ' / ' + novel.charCount  + ' / ' + novel.status,
+        [novel.charCount, novel.points, novel.status, novel.genre].join(' / '),
+        novel.lastUpdatedAt,
         novel.getUrl(),
       ].join('\n');
     });
@@ -44,6 +45,10 @@ exports.scraping = (req, res) => {
       if (LINE_POST_USER_ID && message.length > 0) {
         await LINE.postMessage(LINE_POST_USER_ID, message, true);
         console.log('Sent message.');
+
+      } else {
+        console.log('Not send message.');
+        console.log(message);
       }
 
       res.send('OK');
