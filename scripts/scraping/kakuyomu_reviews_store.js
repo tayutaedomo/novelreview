@@ -14,7 +14,6 @@ instances.set('default', gstore);
 gstore.connect(datastore);
 
 
-const { NovelReviewModel } = require('../../lib/db');
 const { NovelReviews } = require('../../lib/novel_reviews');
 
 
@@ -28,8 +27,6 @@ const { NovelReviews } = require('../../lib/novel_reviews');
   try {
     const novelReviews = new NovelReviews();
     await novelReviews.restore(json_path);
-    //console.log(JSON.stringify(novelReviews, null, 2))
-
     await novelReviews.saveModels();
 
   } catch(err) {
