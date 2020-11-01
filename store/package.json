@@ -1,0 +1,21 @@
+{
+  "name": "novelreview-store",
+  "description": "NovelReview Datastore",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "functions-framework --target=novelreview_store",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tayutaedomo/novelreview.git"
+  },
+  "author": "Tayutaedomo <tayutaedomo@gmail.com>",
+  "homepage": "https://github.com/tayutaedomo/novelreview/store#readme",
+  "dependencies": {
+    "novelreview-lib": "github:tayutaedomo/novelreview-lib"
+  },
+  "devDependencies": {
+    "@google-cloud/functions-framework": "^1.7.1"
+  }
+}
