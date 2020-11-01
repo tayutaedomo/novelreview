@@ -1,4 +1,4 @@
-exports.novelreview_store = (req, res) => {
+exports.novelreview_datastore = (req, res) => {
   try {
     main(req.body);
 
