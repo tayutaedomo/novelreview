@@ -12,7 +12,7 @@
     "url": "git+https://github.com/tayutaedomo/novelreview.git"
   },
   "author": "Tayutaedomo <tayutaedomo@gmail.com>",
-  "homepage": "https://github.com/tayutaedomo/novelreview#readme",
+  "homepage": "https://github.com/tayutaedomo/novelreview/scraping#readme",
   "dependencies": {
     "puppeteer": "^5.3.1",
     "novelreview-lib": "github:tayutaedomo/novelreview-lib"
