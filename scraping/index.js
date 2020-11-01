@@ -6,7 +6,7 @@ const LINE = require('novelreview-lib/lib/line');
 const LINE_POST_USER_ID = process.env['LINE_POST_USER_ID'];
 
 
-exports.scraping = (req, res) => {
+exports.novelreview_scraping = (req, res) => {
 
   const createLineMessage = (reviews) => {
     const messages = reviews.map(payload => {

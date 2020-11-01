@@ -19,7 +19,7 @@ $ export LINE_POST_USER_ID=<Receiver user id>
 ### Deploy
 ```
 $ cd novelreview/scraping
-$ gcloud functions deploy <Your function name> --runtime nodejs10 --trigger-http --allow-unauthenticated
+$ gcloud functions deploy novelreview_scraping --region asia-northeast1 --runtime nodejs10 --trigger-http --allow-unauthenticated
 ```
 
 ## Local Development
