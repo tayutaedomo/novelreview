@@ -13,6 +13,8 @@
   "author": "Tayutaedomo <tayutaedomo@gmail.com>",
   "homepage": "https://github.com/tayutaedomo/novelreview/datastore#readme",
   "dependencies": {
+    "@google-cloud/datastore": "^5.1.0",
+    "gstore-node": "^7.2.5",
     "novelreview-lib": "github:tayutaedomo/novelreview-lib"
   },
   "devDependencies": {
