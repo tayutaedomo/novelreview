@@ -15,6 +15,7 @@
   "homepage": "https://github.com/tayutaedomo/novelreview/scraping#readme",
   "dependencies": {
     "@google-cloud/pubsub": "^2.6.0",
+    "puppeteer": "^5.3.1",
     "novelreview-lib": "github:tayutaedomo/novelreview-lib"
   },
   "devDependencies": {
