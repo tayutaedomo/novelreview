@@ -6,6 +6,14 @@ $ cd novelreview/datastore
 $ npm install
 ```
 
+
+## Cloud Datastore
+If you need Datastore, you have to set below env variables.
+```
+$ export DATASTORE_CREDENTIALS=<JSON credential file name>
+```
+
+
 ## Cloud Functions
 ### Deploy
 ```
