@@ -6,11 +6,11 @@ const LINE = require('novelreview-lib/lib/line');
 const { PubSub } = require('@google-cloud/pubsub');
 let pubSubClient = null;
 if (process.env['PUBSUB_CREDENTIALS']) {
-  const credential_path =
+  const credentialPath =
     path.join(__dirname, 'etc', 'google-cloud', process.env['PUBSUB_CREDENTIALS']);
 
   pubSubClient = new PubSub({
-    keyFilename: credential_path
+    keyFilename: credentialPath
   });
 }
 
