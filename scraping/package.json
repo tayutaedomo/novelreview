@@ -16,7 +16,7 @@
   "dependencies": {
     "@google-cloud/pubsub": "^2.6.0",
     "puppeteer": "^5.3.1",
-    "novelreview-lib": "github:tayutaedomo/novelreview-lib"
+    "novelreview-lib": "github:tayutaedomo/novelreview-lib#v0.0.1"
   },
   "devDependencies": {
     "@google-cloud/functions-framework": "^1.7.1"
