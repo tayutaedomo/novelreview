@@ -1,10 +1,9 @@
 {
-  "name": "novelreview",
-  "description": "NovelReview Scraping",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "novelreview-datastore",
+  "description": "NovelReview Datastore",
+  "version": "0.0.1",
   "scripts": {
-    "start": "functions-framework --target=scraping",
+    "start": "functions-framework --target=novelreview_datastore",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -12,13 +11,11 @@
     "url": "git+https://github.com/tayutaedomo/novelreview.git"
   },
   "author": "Tayutaedomo <tayutaedomo@gmail.com>",
-  "homepage": "https://github.com/tayutaedomo/novelreview#readme",
+  "homepage": "https://github.com/tayutaedomo/novelreview/datastore#readme",
   "dependencies": {
     "@google-cloud/datastore": "^5.1.0",
-    "@line/bot-sdk": "^7.1.0",
     "gstore-node": "^7.2.5",
-    "moment": "^2.29.1",
-    "puppeteer": "^5.3.1"
+    "novelreview-lib": "github:tayutaedomo/novelreview-lib"
   },
   "devDependencies": {
     "@google-cloud/functions-framework": "^1.7.1"
