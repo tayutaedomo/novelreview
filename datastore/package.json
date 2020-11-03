@@ -15,7 +15,7 @@
   "dependencies": {
     "@google-cloud/datastore": "^5.1.0",
     "gstore-node": "^7.2.5",
-    "novelreview-lib": "github:tayutaedomo/novelreview-lib"
+    "novelreview-lib": "github:tayutaedomo/novelreview-lib#v0.0.1"
   },
   "devDependencies": {
     "@google-cloud/functions-framework": "^1.7.1"
