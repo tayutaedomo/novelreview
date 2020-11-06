@@ -17,6 +17,7 @@ if (process.env['PUBSUB_CREDENTIALS']) {
 
 const LINE_POST_USER_ID = process.env['LINE_POST_USER_ID'];
 const PUBSUB_TOPIC = process.env['PUBSUB_TOPIC'];
+const DETECT_OPTIONS = process.env['DETECT_OPTIONS'] || '{}';
 
 
 exports.novelreview_scraping = (req, res) => {
@@ -52,7 +53,14 @@ const scraping = async () => {
 
   const novelReviews = new NovelReviews();
   const reviews = await novelReviews.scrape(page);
-  const detected = await novelReviews.detect();
+
+  let options = {};
+  try {
+    options = JSON.parse(DETECT_OPTIONS);
+  } catch (err) {
+    console.error(err);
+  }
+  const detected = await novelReviews.detect(options);
 
   await browser.close();
 
