@@ -30,6 +30,12 @@ $ cd novelreview/scraping
 $ gcloud functions deploy novelreview_scraping --region asia-northeast1 --runtime nodejs10 --memory 512 --trigger-http --allow-unauthenticated --set-env-vars "LINE_CHANNEL_ACCESS_TOKEN=<token>,LINE_POST_USER_ID=<user_id>,PUBSUB_CREDENTIALS=<filename>,PUBSUB_TOPIC=<topic name>"
 ```
 
+If you want to change the detection algorithmic, you have to set below an env variable.
+```
+$ export DETECT_OPTIONS='{"charCount":10000,"points":300}'
+```
+
+
 ### Local Development
 ```
 $ cd novelreview/scraping
