@@ -106,4 +106,5 @@ dist
 
 data
 scraping/etc/google-cloud/*.json
+scraping-narou/etc/google-cloud/*.json
 datastore/etc/google-cloud/*.json
