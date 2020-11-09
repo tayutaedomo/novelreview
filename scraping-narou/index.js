@@ -63,7 +63,9 @@ const scraping = async (interval) => {
   } catch (err) {
     console.error(err);
   }
-  const detected = await narouReviews.detect(options);
+
+  const detected = narouReviews.detect(options);
+  console.log('Detected:', detected.length);
 
   await browser.close();
 
