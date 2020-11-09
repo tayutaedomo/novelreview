@@ -51,23 +51,34 @@ const scraping = async (interval) => {
     ]
   });
 
-  const page = await browser.newPage();
-
-  const narouReviews = new NarouReviews();
-  const reviews = await narouReviews.scrape(page);
-  await narouReviews.novelsScraping(page, interval);
-
-  let options = {};
   try {
-    options = JSON.parse(DETECT_OPTIONS);
-  } catch (err) {
-    console.error(err);
+    const page = await browser.newPage();
+
+    const narouReviews = new NarouReviews();
+    const reviews = await narouReviews.scrape(page);
+    await narouReviews.novelsScraping(page, interval);
+
+    let options = {};
+    try {
+      options = JSON.parse(DETECT_OPTIONS);
+    } catch (err) {
+      console.error(err);
+    }
+
+    const detected = narouReviews.detect(options);
+    console.log('Detected:', detected.length);
+
+    await browser.close();
+
+    return { reviews, detected };
+
+  } catch(err) {
+    console.err(err);
+
+    await browser.close();
+
+    return { reviews: [], detected: [] };
   }
-  const detected = await narouReviews.detect(options);
-
-  await browser.close();
-
-  return { reviews, detected };
 };
 
 const postMessage = async (detected) => {
