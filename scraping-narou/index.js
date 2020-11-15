@@ -73,7 +73,7 @@ const scraping = async (interval) => {
     return { reviews, detected };
 
   } catch(err) {
-    console.err(err);
+    console.error(err);
 
     await browser.close();
 
